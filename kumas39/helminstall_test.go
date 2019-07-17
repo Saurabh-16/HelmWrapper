@@ -12,6 +12,6 @@ func TestHelmInstall(t *testing.T) {
 
 	opt := k8s.KubectlOptions{ContextName: os.Getenv("contextname"), ConfigPath: os.Getenv("configpath"), Namespace: os.Getenv("namespace")}
 	helmoptions := helm.Options{KubectlOptions: &opt}
-	helm.Install(t, &helmoptions, "/home/vagrant/Desktop/pega", "pega12")
+	helm.Install(t, &helmoptions, os.Getenv("ChartPath"), os.Getenv("ChartName"))
 
 }
